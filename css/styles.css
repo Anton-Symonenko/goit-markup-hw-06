@@ -517,7 +517,15 @@ button {
 
     .our-feature-subtitle {
         margin: 8px 0;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.2;
     }
+
+    .our-feature-text{
+        font-weight: 400;
+    }
+
 
     .feature-icon {
         display: block;
@@ -535,9 +543,109 @@ button {
 
 
 /* #region our team */
+.our-team{
+    background-color: #F4F4FD;
+    padding-top: 96px;
+    padding-bottom: 96px;
+}   
+
+.tittle-our-team{
+    text-align: center;
+    font-size: 36px;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    color: #2E2F42;
+    margin-bottom: 72px;
+}
+
+.our-team-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.our-team-item {
+    background-color: #ffffff;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+    background: #fff;
+    margin-bottom: 72px;
+    max-width: 264px;
+}
+
+.content-team {
+    padding: 32px 16px;
+}
+
+.name-worker {
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2E2F42;
+    margin-bottom: 8px;
+}
+
+.profesion {
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+}
+
+.team-socila-list {
+    display: inline-flex;
+    gap: 24px;
+
+}
+
+.team-socila-items {}
+
+.svg-social-icon {
+    fill: #f4f4fd
+}
+
+.team-social-icon {
+    background-color: #4D5AE5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    gap: 24px;
+    height: 40px;
+    width: 40px;
+    fill: #f4f4fd;
+    transition: background-color 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.team-social-icon:hover,
+.team-social-icon:focus {
+    background-color: #404BBF;
+}
 
 
+@media screen and (min-width: 768px){
+    .our-team-list{
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 64px 24px;
+    }
 
+    .our-team-item{
+        margin-bottom: 0;
+        flex-basis: calc((100% - 24px) / 2);
+    }
+}
+
+@media screen and (min-width: 1158px){
+    .our-team{
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+}
 
 /* #endregion our team */
 
@@ -547,7 +655,7 @@ button {
 
 
 
-.our-team,
+
 .our-portfolio,
 .footer,
 .backdrop {
