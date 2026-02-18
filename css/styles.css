@@ -779,16 +779,16 @@ button {
         padding: 32px 16px;
         height: auto;
     }
-
-
 }
-
-
-
 
 /* #endregion portfolio */
 
-.footer,
+/* #region footer */
+
+
+/* #endregion footer */
+
+
 .backdrop {
     display: none;
 }
