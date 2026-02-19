@@ -367,7 +367,14 @@ button {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 72px 52px;
+    padding: 72px 0;
+}
+
+.container-hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 @media screen and (min-resolution: 196dpi) {
@@ -669,10 +676,12 @@ button {
 
 .our-portfolio-list{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
 }
 
 .our-portfolio-item{
-    margin-bottom: 48px;
     box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
@@ -734,6 +743,7 @@ button {
 
 @media screen and (min-width: 768px){
     .our-portfolio-list {
+        flex-direction: unset;
         display: flex;
         flex-wrap: wrap;
         gap: 72px 24px;
@@ -1002,17 +1012,21 @@ button {
         padding-right: 15px;
         display: flex;
         flex-wrap: nowrap;
+        align-items: baseline;
         gap: 0;
         }
 
     .footer-social-container{
+        display: flex;
         margin-left: 120px;
-        margin-right: 80px;
+        
+
     }
 
     .footer-subscribe-container{
+        margin-left: auto;
+        width: auto;
         
-        justify-content: start;
     }
 }
 
