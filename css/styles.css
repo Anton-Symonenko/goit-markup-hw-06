@@ -563,6 +563,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 72px;
 }
 
 .our-team-item {
@@ -570,7 +571,6 @@ button {
     border-radius: 0 0 4px 4px;
     box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
     background: #fff;
-    margin-bottom: 72px;
     max-width: 264px;
 }
 
@@ -891,7 +891,6 @@ button {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #fff;
-    margin-bottom: 16px;
 }
 
 .user-email-sbscr {
@@ -1021,6 +1020,288 @@ button {
 /* #endregion footer */
 
 
+/* #region backdrop */
+
 .backdrop {
-    display: none;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
+
+.backdrop.is-open {
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 288px;
+    min-height: 584px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+    background-color: #fcfcfc;
+    border-radius: 4px;
+    padding: 72px 16px 24px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop:not(.is-open).modal {
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+.icon-close-button {
+    fill: #2e2f42;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-button {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    border-radius: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #e7e9fc;
+    
+
+}
+
+.close-button:focus,
+.close-button:hover {
+    background-color: #404bbf;
+    cursor: pointer;
+}
+
+.close-button:focus .icon-close-button,
+.close-button:hover .icon-close-button {
+    fill: #fff;
+    cursor: pointer;
+}
+
+.form-tittle {
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    color: #2e2f42;
+    align-content: center;
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+}
+
+
+.fiel-form-wraper {
+    margin-bottom: 8px;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+
+.fiel-form-wraper:nth-child(4) {
+    margin-bottom: 16px;
+}
+
+
+.label-feild {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    margin-bottom: 4px;
+}
+
+.positional-div-container {
+    position: relative;
+}
+
+.text-feild {
+    color: #2e2f42;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    width: 100%;
+    height: 40px;
+    padding: 8px 8px 8px 38px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.text-feild:focus,
+.text-feild:active {
+    border-color: #4d5ae5;
+    outline: none;
+
+}
+
+.text-feild:focus+.svg-icons {
+    fill: #4d5ae5;
+}
+
+.svg-icons {
+    fill: #2e2f42;
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.comment-feild {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: 0.04em;
+    padding: 8px 16px;
+    color: #2e2f42;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    width: 100%;
+    height: 120px;
+    resize: none;
+    overflow: auto;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.comment-feild::placeholder {
+    color: rgba(46, 47, 66, 0.4);
+}
+
+.comment-feild:focus,
+.comment-feild:active {
+    border-color: #4d5ae5;
+    outline: none;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.check-box-deleted:checked+.agree-text .check-box-container {
+    background-color: #404bbf;
+
+}
+
+
+.check-box-deleted:focus+.agree-text .check-box-container {
+    border-color: #404bbf;
+}
+
+.check-box-deleted:checked+.agree-text .icon-vector-checkbox {
+    fill: #f4f4fd;
+}
+
+.check-box-container {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: 8px;
+
+
+}
+
+.icon-vector-checkbox {
+    fill: transparent;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
+}
+
+.agree-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+
+
+
+}
+
+.accent-policy {
+    line-height: 1.33;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #4d5ae5;
+}
+
+
+
+.sent-form-button {
+    border-radius: 4px;
+    padding: 16px 65px;
+    height: 56px;
+    width: 169px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    background-color: #4d5ae5;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    border: 0;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.button-wrraper {
+    display: flex;
+    justify-content: center;
+
+}
+
+.sent-form-button:hover,
+.sent-form-button:focus {
+    cursor: pointer;
+    background-color: #404bbf;
+}
+
+
+@media screen and (min-width: 768px){
+    .modal{
+        width: 408px;
+        padding: 72px 24px 24px;
+    }
+
+}
+
+/* #endregion backdrop */
+

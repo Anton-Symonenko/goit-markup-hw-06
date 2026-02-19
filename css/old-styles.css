@@ -766,8 +766,8 @@ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 .close-button:hover{
     background-color: #404bbf;
     cursor: pointer;
-
 }
+
 .close-button:focus .icon-close-button,
 .close-button:hover .icon-close-button{
     fill: #fff;
