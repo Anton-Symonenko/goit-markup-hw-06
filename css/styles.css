@@ -79,7 +79,7 @@ button {
 }
 
 .nav-list,
- address{
+.address{
     display: none;
 }
 
@@ -454,7 +454,6 @@ button {
 
 /* #region our fearture */
 
-.our-feature-tittle,
 .feature-icon{
     display: none;
 }
